@@ -1,0 +1,22 @@
+{
+  "name": "reactredux",
+  "version": "1.0.0",
+  "description": "Application to gather customer feedback from emails.",
+  "main": "app.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Tyler Norkus",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.4",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0"
+  }
+}

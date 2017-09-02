@@ -1,0 +1,16 @@
+App for Startup:
+  Tabulates feedback results from customer emails.
+  (Business uses results to improve app/service).
+
+Workflow:
+  User signs up via Google OAuth
+  User pays for email credits via Stripe
+  User creates a new campaign/survey
+  User enters list of emails to send survey to
+  Email is sent to surveyed customers
+  Survey participants click on link in email to provide feedback
+  Feedback is tabulated
+  Report of all survey responses generated
+
+Inside of node get common js modules, on the front end like React can
+use ES 2015 modules so have expanded access to other syntax
