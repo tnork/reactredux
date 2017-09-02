@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
   res.send({ hi: 'there'});
 });
 
-
 app.listen(app.get('port'), function() {
   console.log('Server active on port ' + app.get('port'));
 });
