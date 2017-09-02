@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 //Dynamic port binding for Heroku
-app.set('port', (process.env.Port || 3000));
+app.set('port', (process.env.Port || 5000));
 
 // Route Handlers (APP: GET, POST, PUT, DELETE, PATCH)
 app.get('/', (req, res) => {
