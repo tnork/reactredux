@@ -4,7 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 
 var app = express();
@@ -13,7 +13,7 @@ var app = express();
 
 // app.set('views', path.join(__dirname, 'views'));
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use('/css', express.static(__dirname+ '/node_modules/bootstrap/dist/css'));
+// app.use('/css', express.static(__dirname+ '/node_modules/bootstrap/dist/css'));
 
 // app.engine('handlebars', exphbs({extname: 'handlebars', defaultLayout:'main', partialsDir: __dirname + '/views/partials/',
 // helpers: { //Helper is used to ease stringifying JSON
