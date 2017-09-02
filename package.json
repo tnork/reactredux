@@ -11,9 +11,7 @@
   "author": "Tyler Norkus",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
-    "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
@@ -21,6 +19,6 @@
     "nodemon": "^1.11.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "serve-favicon": "^2.4.3"
+    "serve-favicon": "^2.4.3",
   }
 }
