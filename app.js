@@ -9,7 +9,7 @@ app.get('/', function(req, res) {
 });
 
 //Dynamic port binding for Heroku
-app.listen(process.env.Port || 5000), function() {
+app.listen(process.env.Port || 5000, function() {
   console.log('Server active on port ' + app.get('port'));
 });
 
