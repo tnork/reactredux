@@ -1,9 +1,14 @@
-const _ = require('lodash');
 const express = require('express');
+const mongoose = require('mongoose');
+const _ = require('lodash');
+
+require('./models/user'); // Have to require data models to declare before services using those
 require('./services/passport');
 const authRoutes = require('./routes/authRoutes');
-// Cpuld make one line belo with require('./routes/authRoutes')(app);
+const keys = require('./config/keys');
 
+// URI from mLab
+mongoose.connect(keys.mLabMongoURI);
 
 const app = express();
 authRoutes(app);

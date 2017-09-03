@@ -22,7 +22,7 @@ Passport - General helpers for handling auth in Express apps
 Google Developer console create client ID/credentials for Google+ API,
 OAuth is buried there.
 Create first ID for dev/localhost, second for real deploy
-  authorized javascript origins (dev) http://localhost:3000
+  authorized Javascript origins (dev) http://localhost:3000
   authorized redirect (Dev) http://localhost:3000/auth/google/callback
 
 Client ID 1078364790644-nh2bap4jskshd26iu9fo89smgr06v7rv.apps.googleusercontent.com   (public token)
@@ -54,7 +54,24 @@ Client Secret gREKIlCxxLrjZ0x1m8I4PrWm  (do not share)
 https://accounts.google.com/o/oauth2/v2/auth?response_type=code&
 redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fgoogle%2Fcallback&
 scope=profile%20email&
-client_id=1078364790644-nh2bap4jskshd26iu9fo89smgr06v7rv.apps.googleusercontent.com
+client_id=XXXXXXXXXXXXXXX-nh2bap4jskshd26iu9fo89smgr06v7rv.apps.googleusercontent.com
 
 URI Mismatch above so it is difficult to get OAuth info from wrong redirect URI
 need to authorize redirect URI with Google ahead of time
+
+
+We are using cookie-based authentication because HTTP is stateless. Needs the cookie or token to be able to
+remember access in between logins.
+
+Cookie back from the Google server in the header we get a token. Browser automatically strips off the token from the response, stores,
+and appends the token to any follow up requests. Browser includes cookie in follow-up requests.
+
+Profile token : {"id":"XXXXXXXXXXXXXXX",
+This id back from Google stays the same. We can compare in OAuth flow with unique identifier token.
+
+-----
+Mongoose
+A Model Class represents a single collection in MongoDB, records are model instances
+Using Mongo hosted in mLab
+After provision an instance, can instruct Mongoose to connect via the standard MongoDB URI
+Need to update username and password in URI in config file
