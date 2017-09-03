@@ -16,4 +16,14 @@ module.exports = function(app) {
   // to receive their actual user data in the scope above
   app.get('/auth/google/callback', passport.authenticate('google'));
 
+  // For authenticated users
+  app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+  });
+
+    app.get('/api/logout', (req, res) => { // Has req.user object
+      req.logout(); // Passport function that takes id in cookie and eliminates it
+      res.send(req.user); // Sends back undefined or no content
+    });
+
 };

@@ -2,9 +2,23 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('../config/keys'); //Back into server folder then config
 
-//Don't require in mongoose model code, creates chaos with testing Mocha Jest etc
+//Don't require in Mongoose model code, creates chaos with testing Mocha Jest etc
 const mongoose = require('mongoose');
 const User = mongoose.model('users');  //model class
+
+// Puts identifying information in the cookie, turns user into an id
+passport.serializeUser((user, done) => { // uses done, No err so null sends user ID from db
+  done(null, user.id);
+  // ID  is passed to follow up requests, this is the ID from MongoDB for the record, not the Google ID because want to keep generic for other auth flows
+});
+
+// Removes cookie and returns mongoose class user, deserializes ID back to user
+passport.deserializeUser((id, done) => {
+  User.findById(id)
+  .then(user => {
+    done(null, user);
+  });
+});
 
 // Strategies
 passport.use(
@@ -34,7 +48,6 @@ passport.use(
           .then(user => done(null, user)); // In callback get second model instance, same underlying model but always use one in the promise callback from db
       }
     });
-
 
   })
 );

@@ -75,3 +75,12 @@ A Model Class represents a single collection in MongoDB, records are model insta
 Using Mongo hosted in mLab
 After provision an instance, can instruct Mongoose to connect via the standard MongoDB URI
 Need to update username and password in URI in config file
+
+Then have to serializeUser with the token, set a cookie.
+Cookie/token gets automatically added to request for server. Passport can identify.
+When logout, deserializeUser.
+
+OAuth allows someone to sign in. After that, the user record has an internal ID that is used.
+
+After cookie-session extracts user id for passport. Is deserialized turned into an id,
+user model instance added to req object as 'req.user'
