@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
 const User = mongoose.model('users');  //model class
 
 // Puts identifying information in the cookie, turns user into an id
-passport.serializeUser((user, done) => { // uses done, No err so null sends user ID from db
-  done(null, user.id);
+passport.serializeUser((user, done) => {
+  done(null, user.id); // uses done, No err so null sends user ID from db
   // ID  is passed to follow up requests, this is the ID from MongoDB for the record, not the Google ID because want to keep generic for other auth flows
 });
 

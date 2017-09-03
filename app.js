@@ -29,8 +29,6 @@ authRoutes(app);
 
 
 app.set('port', (process.env.Port || 3000));
-require('./routes/authRoutes')(app);
-
 
 app.listen(process.env.PORT || 3000, function() {   //Dynamic port binding for Heroku
   console.log('Server active on port ' + app.get('port'));
