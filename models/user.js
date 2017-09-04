@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; //Using schema property of course
 // const { Schema } = mongoose; // ES2015 style of deconstruction
 
-// Schema limits the flexible properties Mongo allows to create tight schema
+// Schema limits the flexible properties Mongo allows 
 const userSchema = new Schema({
   googleID: String,
   firstName: String,

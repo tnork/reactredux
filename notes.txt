@@ -70,6 +70,7 @@ Profile token : {"id":"XXXXXXXXXXXXXXX",
 This id back from Google stays the same. We can compare in OAuth flow with unique identifier token.
 
 -----
+
 Mongoose
 A Model Class represents a single collection in MongoDB, records are model instances
 Using Mongo hosted in mLab
@@ -77,6 +78,8 @@ After provision an instance, can instruct Mongoose to connect via the standard M
 Need to update username and password in URI in config file
 
 Then have to serializeUser with the token, set a cookie.
+The session information is stored in req.session in Passport. Is the same as MongoID record ID. Cookie-session just parses.
+Chose cookie-session over express-session(allows more storage) because ~4kb cookie limit is not a problem.
 Cookie/token gets automatically added to request for server. Passport can identify.
 When logout, deserializeUser.
 
@@ -84,3 +87,11 @@ OAuth allows someone to sign in. After that, the user record has an internal ID 
 
 After cookie-session extracts user id for passport. Is deserialized turned into an id,
 user model instance added to req object as 'req.user'
+
+--
+
+Dev and prod keys separated, prod keys are Heroku env variables, set up in Settings, Config Variables
+In keys.js has if to determine production.
+Paste values from prod.js to Heroku, use random string for Cookie value.
+Have to use real mLab URI for Heroku config.
+--

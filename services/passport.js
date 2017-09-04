@@ -40,7 +40,7 @@ passport.use(
     .then((existingUser) => { // existingUser is either null
       if (existingUser) {
         // already have user
-        done(null, existingUser); // done requires err/null, then user record
+        done(null, existingUser); 
       } else {
         // Save to MongoDB
         new User({googleID: profile.id, firstName: profile.name.givenName, lastName: profile.name.familyName})
