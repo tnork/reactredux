@@ -25,7 +25,8 @@ passport.use(
   new GoogleStrategy({
   clientID: keys.googleClientID,
   clientSecret: keys.googleClientSecret,
-  callbackURL: '/auth/google/callback'
+  callbackURL: '/auth/google/callback',
+  proxy: true
   // Incoming route after Google grants permission to the user
 
 }, (accessToken, refreshToken, profile, done) => {
@@ -40,7 +41,7 @@ passport.use(
     .then((existingUser) => { // existingUser is either null
       if (existingUser) {
         // already have user
-        done(null, existingUser); 
+        done(null, existingUser);
       } else {
         // Save to MongoDB
         new User({googleID: profile.id, firstName: profile.name.givenName, lastName: profile.name.familyName})
