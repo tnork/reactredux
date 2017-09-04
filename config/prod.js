@@ -3,6 +3,6 @@
 module.exports = {
   googleClientID: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  mLabMongoURI: process.env.MONGO_URI,
-  cookieKeys: process.env.COOKIE_KEY
+  mLabMongoURI: process.env.MLABMONGO_URI,
+  cookieKeys: process.env.COOKIE_KEYS
 };
