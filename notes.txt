@@ -1,3 +1,7 @@
+// Boot with npm run dev
+// git config --global core.autocrlf true
+
+
 App for Startup:
   Tabulates feedback results from customer emails.
   (Business uses results to improve app/service).
@@ -25,10 +29,6 @@ Create first ID for dev/localhost, second for real deploy
   authorized Javascript origins (dev) http://localhost:3000
   authorized redirect (Dev) http://localhost:3000/auth/google/callback
 
-Client ID 1078364790644-nh2bap4jskshd26iu9fo89smgr06v7rv.apps.googleusercontent.com   (public token)
-Client Secret gREKIlCxxLrjZ0x1m8I4PrWm  (do not share)
-
-
 1. Users logs in with Google
   localhost:5000/auth/google
 
@@ -48,7 +48,6 @@ Client Secret gREKIlCxxLrjZ0x1m8I4PrWm  (do not share)
 
 8. Cookie-based re-entry
 
-
 ----
 
 https://accounts.google.com/o/oauth2/v2/auth?response_type=code&
@@ -58,7 +57,6 @@ client_id=XXXXXXXXXXXXXXX-nh2bap4jskshd26iu9fo89smgr06v7rv.apps.googleuserconten
 
 URI Mismatch above so it is difficult to get OAuth info from wrong redirect URI
 need to authorize redirect URI with Google ahead of time
-
 
 We are using cookie-based authentication because HTTP is stateless. Needs the cookie or token to be able to
 remember access in between logins.
@@ -94,4 +92,14 @@ Dev and prod keys separated, prod keys are Heroku env variables, set up in Setti
 In keys.js has if to determine production.
 Paste values from prod.js to Heroku, use random string for Cookie value.
 Have to use real mLab URI for Heroku config.
+--
+
+Deployed FB incubator's create-react-app. After install global and save use terminal command
+create-react-app client.
+cd client, npm start (Starts dev server)
+Code base is nicely in client, App.js. Watch both package.JSON to update scripts and dependencies.
+2 servers run with concurrently:
+  Express server is connected to Mongo and provides app with JSON requests to browser.
+  React server with component files App.js, Header.js, Button.js, etc generates Javascript with webpack and Babel.
+
 --
