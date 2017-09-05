@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 
 const keys = require('./config/keys');
-require('./models/User'); // Have to require data models to declare before services using those
+require('./models/user'); // Have to require data models to declare before services use
 require('./services/passport');
 const authRoutes = require('./routes/authRoutes');
 
